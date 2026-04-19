@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Личный кабинет</title>
+
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: #fafafa;
+    font-family: Arial, sans-serif;
+    background: #f2f3f7;
 }
 
 .header {
-    background: #4CAF50;
+    background: #345a8a;
     color: white;
-    padding: 15px;
+    padding: 14px 20px;
     font-size: 20px;
 }
 
@@ -24,8 +25,9 @@ body {
 .box {
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border: 1px solid #d7d9df;
 }
 </style>
 </head>
@@ -37,15 +39,22 @@ body {
 <div class="container">
     <div class="box">
         <h2>Здравствуйте, <span id="username"></span>!</h2>
-        <p>Вы успешно вошли в демо-панель.</p>
+        <p>Вы вошли в демо-систему. Это не настоящая авторизация — просто имитация.</p>
 
-        <button onclick="logout()">Выйти</button>
+        <button onclick="logout()" style="
+            padding: 10px 18px;
+            background:#345a8a;
+            color:white;
+            border:none;
+            border-radius:4px;
+            cursor:pointer;
+        ">Выйти</button>
     </div>
 </div>
 
 <script>
 let user = localStorage.getItem("demo_user");
-document.getElementById("username").textContent = user ? user : "Пользователь";
+document.getElementById("username").textContent = user || "Пользователь";
 
 function logout() {
     localStorage.removeItem("demo_user");
