@@ -3,40 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Dashboard v3</title>
+  <title>Dashboard v3.5</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- графики -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
   <div class="topbar">
-    <h1>📊 Smart Dashboard v3</h1>
+    <h1>📊 Smart Dashboard v3.5</h1>
     <button onclick="toggleTheme()">🌓 Тема</button>
   </div>
 
   <div class="container">
 
-    <!-- WEATHER -->
     <div class="card">
-      <h2>🌤 Погода (5 источников)</h2>
-      <input id="city" placeholder="Город">
-      <button onclick="getWeather()">Показать</button>
+      <h2>🌤 Погода</h2>
+      <button onclick="getWeather()">Обновить</button>
       <div id="weather"></div>
     </div>
 
-    <!-- CURRENCY -->
     <div class="card">
-      <h2>💱 Валюта + график</h2>
+      <h2>💱 Валюта</h2>
       <button onclick="getCurrency()">Обновить</button>
       <canvas id="chart"></canvas>
       <div id="currency"></div>
     </div>
 
-    <!-- NEWS -->
     <div class="card">
-      <h2>🗞 Новости мира</h2>
+      <h2>🗞 Новости</h2>
       <button onclick="getNews()">Загрузить</button>
       <div id="news"></div>
     </div>
