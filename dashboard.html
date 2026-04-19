@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Личный кабинет</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #fafafa;
+}
+
+.header {
+    background: #4CAF50;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">Личный кабинет</div>
+
+<div class="container">
+    <div class="box">
+        <h2>Здравствуйте, <span id="username"></span>!</h2>
+        <p>Вы успешно вошли в демо-панель.</p>
+
+        <button onclick="logout()">Выйти</button>
+    </div>
+</div>
+
+<script>
+let user = localStorage.getItem("demo_user");
+document.getElementById("username").textContent = user ? user : "Пользователь";
+
+function logout() {
+    localStorage.removeItem("demo_user");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
