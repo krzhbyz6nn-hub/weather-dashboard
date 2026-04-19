@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Вход</title>
+
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+    background: #e6e9ef;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,53 +16,88 @@ body {
 }
 
 .login-box {
-    width: 320px;
-    background: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    background: #ffffff;
+    width: 360px;
+    padding: 28px;
+    border-radius: 6px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.12);
+    border: 1px solid #d5d8df;
 }
 
 .logo {
     text-align: center;
     font-size: 26px;
-    margin-bottom: 20px;
     font-weight: bold;
+    color: #345a8a;
+    margin-bottom: 22px;
+}
+
+.input-label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
 }
 
 input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #c8ccd5;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #345a8a;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 90, 138, 0.3);
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    background: #4CAF50;
+    padding: 12px;
+    background: #345a8a;
     color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 4px;
     font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
-    background: #43a047;
+    background: #2d4f7a;
 }
 
 .links {
+    margin-top: 12px;
     text-align: center;
-    margin-top: 10px;
 }
 
 .links a {
-    font-size: 12px;
-    color: #555;
+    color: #345a8a;
     text-decoration: none;
+    font-size: 13px;
     display: block;
+    margin-top: 6px;
+    transition: 0.2s;
+}
+
+.links a:hover {
+    color: #1d3656;
+}
+
+/* Чекбокс */
+.checkbox-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.checkbox-block input {
+    width: auto;
+    margin-right: 8px;
 }
 </style>
 </head>
@@ -69,10 +105,19 @@ button:hover {
 <body>
 
 <div class="login-box">
+
     <div class="logo">DemoForum</div>
 
-    <input id="login" type="text" placeholder="Логин или email">
-    <input id="pass" type="password" placeholder="Пароль">
+    <div class="input-label">Логин или Email</div>
+    <input id="login" type="text" placeholder="Введите логин">
+
+    <div class="input-label">Пароль</div>
+    <input id="pass" type="password" placeholder="Введите пароль">
+
+    <div class="checkbox-block">
+        <input type="checkbox" id="remember">
+        <label for="remember" style="font-size:14px;">Запомнить меня</label>
+    </div>
 
     <button onclick="demoLogin()">Войти</button>
 
@@ -80,22 +125,21 @@ button:hover {
         <a href="#">Забыли пароль?</a>
         <a href="#">Регистрация</a>
     </div>
+
 </div>
 
 <script>
 function demoLogin() {
-    let l = document.getElementById("login").value.trim();
-    let p = document.getElementById("pass").value.trim();
+    let login = document.getElementById("login").value.trim();
+    let pass  = document.getElementById("pass").value.trim();
 
-    if (l === "" || p === "") {
+    if (login === "" || pass === "") {
         alert("Введите логин и пароль");
         return;
     }
 
-    // имитация загрузки
-    localStorage.setItem("demo_user", l);
+    localStorage.setItem("demo_user", login);
 
-    // переход в кабинет
     window.location.href = "dashboard.html";
 }
 </script>
