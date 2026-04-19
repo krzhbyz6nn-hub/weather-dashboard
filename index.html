@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Инфо Дашборд</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>📊 Информационный дашборд</h1>
+
+  <!-- WEATHER -->
+  <section>
+    <h2>🌤 Погода</h2>
+    <input id="city" placeholder="Введите город">
+    <button onclick="getWeather()">Показать</button>
+    <div id="weather"></div>
+  </section>
+
+  <!-- CURRENCY -->
+  <section>
+    <h2>💱 Курс валют</h2>
+    <button onclick="getCurrency()">Обновить курс</button>
+    <div id="currency"></div>
+  </section>
+
+  <!-- NEWS -->
+  <section>
+    <h2>🗞 Новости</h2>
+    <button onclick="getNews()">Загрузить новости</button>
+    <div id="news"></div>
+  </section>
+
+<script src="script.js"></script>
+</body>
+</html>
