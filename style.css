@@ -1,0 +1,19 @@
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+}
+
+section {
+  margin: 30px;
+  padding: 20px;
+  background: #1e293b;
+  border-radius: 12px;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
